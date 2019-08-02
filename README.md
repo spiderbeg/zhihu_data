@@ -45,4 +45,4 @@
 ## 如何
 ## 部分效果展示
 * 粉丝数 1w 以上用户信息词云图
-![publish](zhihu_html/zhihu.png)<br>
+![publish](zhihu_html/zhihu.jpg)<br>
