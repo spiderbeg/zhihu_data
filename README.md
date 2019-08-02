@@ -46,3 +46,5 @@
 ## 部分效果展示
 * 粉丝数 1w 以上用户信息词云图
 ![publish](zhihu_html/zhihu.jpg)<br>
+* 粉丝数前50用户关系图（节点大小代表粉丝数）
+![publish](node/zhihu_module.png)<br>
