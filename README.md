@@ -40,9 +40,24 @@
 * **zhihu_连出度.png** 为以用户关注数为节点大小的用户关系图；
 * **zhihu_连入度.png** 为以用户被关注数为节点大小的用户关系图。
 ## 一些建议及注意事项
+* 如何安装 git 见 <https://mp.weixin.qq.com/mp/appmsg/show?__biz=MjM5MDEyMDk4Mw==&appmsgid=10000361&itemidx=1&sign=f88b420f70c30c106697f54f00cf2a95>；
+* MongoDB 安装：<http://mongoing.com/archives/25650> ；使用：<https://juejin.im/post/5addbd0e518825671f2f62ee>;
+* gephi 具体操作可见<https://github.com/spiderbeg/marvel-gephi>；
+* 不熟悉 scrapy 的瞧一眼这里：<https://cuiqingcai.com/3472.html>;
 * scrapy 项目抓取代码中用到了 web 代理及多 cookie，需在填入自己的 web 代理及 cookie 值。就抓取时间 2019-7-23 来说不单用户单 IP 的抓取时间间隔为 0.45s, 具体时间与状况还需各位亲自尝试；
 * pyecharts 绘制图形生成 html 文件，为方便本地查看可视化效果。把所需的 js 文件一并放置于此目录下；因此建议下载整个**zhihu_html文件夹**到本地后查看。
-## 如何
+## 如何跑起来
+1. 确定好放置项目位置
+
+         git clone https://github.com/spiderbeg/zhihu_data.git
+
+2. 进入 /zhihu_data/code/zhihu/spiders 文件夹，打开 user_data.py, article.py, huida.py, 写入自己的代理，及cookie。打开控制台，进入 /zhihu_data/code/zhihu, 输入以下命令，即可抓取粉丝数 1w 以上用户回答数、点赞数、粉丝数等信息。 
+
+         scrapy crawl user_data
+
+3. 用户信息抓取完毕后，按照第二步所示命令，修改 user_data 为 article，为抓取粉丝数 10w 以上用户发布文章信息，huida 则为粉丝数 10w 以上用户回答的详细信息。
+4. 找到 /zhihu_data/code/zhihu_plot.ipynb, 可直接将此文件放置于 jupyter notebook 文件夹下，修改生成图表文件路径即可。 
+
 ## 部分效果展示
 * 粉丝数 1w 以上用户信息词云图
 ![publish](zhihu_html/zhihu.jpg)<br>
