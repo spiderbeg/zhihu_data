@@ -65,6 +65,46 @@
 3. 用户信息抓取完毕后，按照第二步所示命令，修改 user_data 为 article，为抓取粉丝数 10w 以上用户发布文章信息，huida 则为粉丝数 10w 以上用户回答的详细信息。
 4. 找到 /zhihu_data/code/zhihu_plot.ipynb, 可直接将此文件放置于 jupyter notebook 文件夹下，修改生成图表文件路径即可。 
 5. 部分代码
+* 连接 MongoDB:
+
+        def get_ready(ch='reply_user',dbname='hupu'): # ch: 表名，dbname: 数据库名
+            '''数据库调用'''
+            global mycol, myclient,myhp
+            myclient = pymongo.MongoClient("mongodb://localhost:27017/")
+            mydb = myclient[dbname]
+            mycol = mydb[ch]
+            myhp = mydb['posts_user']
+ 
+* scrapy 保存数据到数据库 piplines.py; 以下为官方示例<https://scrapy-chs.readthedocs.io/zh_CN/1.0/topics/item-pipeline.html>，本项目已经配好请直接使用：
+
+        import pymongo
+
+        class MongoPipeline(object):
+
+            collection_name = 'scrapy_items' # 爬虫名
+
+            def __init__(self, mongo_uri, mongo_db): # 初始化参数
+                self.mongo_uri = mongo_uri
+                self.mongo_db = mongo_db
+
+            @classmethod
+            def from_crawler(cls, crawler):
+                return cls(
+                    mongo_uri=crawler.settings.get('MONGO_URI'),
+                    mongo_db=crawler.settings.get('MONGO_DATABASE', 'items')
+                )
+
+            def open_spider(self, spider): # 爬虫开启时调用
+                self.client = pymongo.MongoClient(self.mongo_uri)
+                self.db = self.client[self.mongo_db]
+
+            def close_spider(self, spider): # 爬虫关闭时调用
+                self.client.close()
+
+            def process_item(self, item, spider): # 每个item pipeline组件都需要调用该方法，这个方法必须返回一个具有数据的dict，或是 Item (或任
+                self.db[self.collection_name].insert(dict(item)) # 何继承类)对象， 或是抛出 DropItem 异常，被丢弃的item将不会被之后的
+                return item                                      # pipeline组件所处理。
+
 ## 部分效果展示
 * 粉丝数 1w 以上用户信息词云图
 ![publish](zhihu_html/zhihu.jpg)<br>
