@@ -32,6 +32,10 @@ proxies = {
     "http": "http://spiderbeg:pythonbe@106.52.85.210:8000",
     "https": "http://spiderbeg:pythonbe@106.52.85.210:8000",
 }
+headers = {
+    'user-agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36',
+    'cookie':'your_cookie（用户主页面）'
+    }
 for i,url_id in enumerate(se2): # 爬取
     if i>=0:
         print(i,' ', end='') # url个数
