@@ -27,6 +27,7 @@
 * wordcloud
 ## 文件说明
 ### code 项目代码
+* **user.py** 获取关注度 1w 以上用户 id。
 * **zhihu** scrapy 项目代码文件，user_data.py 粉丝数 1w 以上用户信息抓取代码； article.py 粉丝数 10w 以上用户文章信息抓取；huida.py 粉丝数 10w 以上用户回答信息。
 * **zhihu_plot.ipynb pyecharts** 图表绘制代码，可视化库使用 pyecharts。
 ### zhihu_html 
@@ -60,7 +61,7 @@
 
          git clone https://github.com/spiderbeg/zhihu_data.git
 
-2. 进入 /zhihu_data/code/zhihu/spiders 文件夹，打开 user_data.py, article.py, huida.py, **写入自己的代理，及cookie**。打开控制台，进入 /zhihu_data/code/zhihu, 输入以下命令，即可抓取粉丝数 1w 以上用户回答数、点赞数、粉丝数等信息。 
+2. 在 /zhihu_data/code 中 user.py 获取关注数过 1w 用户 id; 进入 /zhihu_data/code/zhihu/spiders 文件夹，打开 user_data.py, article.py, huida.py, **写入自己的代理，及cookie**。打开控制台，进入 /zhihu_data/code/zhihu, 输入以下命令，即可抓取粉丝数 1w 以上用户回答数、点赞数、粉丝数等信息。 
 
          scrapy crawl user_data
 
