@@ -51,8 +51,8 @@
 * **edge50.xlsx** gephi 所需的边文件，文件中 target 列为关注用户，source 列为被关注用户；
 * **zhihu.gephi** 为生成的图文件，可直接用 gephi 打开，gephi 具体操作可见<https://github.com/spiderbeg/marvel-gephi>；
 * **zhihu_module.png** 为以粉丝数为节点大小的用户关系图；
-* **zhihu_连出度.png** 为以用户关注数为节点大小的用户关系图；
-* **zhihu_连入度.png** 为以用户被关注数为节点大小的用户关系图。
+* **连出度.png** 为以用户关注数为节点大小的用户关系图；
+* **连入度.png** 为以用户被关注数为节点大小的用户关系图。
 ## 一些建议及注意事项
 ## 建议
 * 如何安装 git 见 <https://mp.weixin.qq.com/mp/appmsg/show?__biz=MjM5MDEyMDk4Mw==&appmsgid=10000361&itemidx=1&sign=f88b420f70c30c106697f54f00cf2a95>；
