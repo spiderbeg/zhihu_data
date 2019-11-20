@@ -34,6 +34,7 @@
 * **user.py** 获取关注度 1w 以上用户 id。
 * **zhihu** scrapy 项目代码文件，user_data.py 粉丝数 1w 以上用户信息抓取代码； article.py 粉丝数 10w 以上用户文章信息抓取；huida.py 粉丝数 10w 以上用户回答信息。
 * **user_info.json** 粉丝数1w以上用户相关数据，即**zhihu_plot.ipynb**中集合 user_info 的数据。
+   * MongoDB导入示例, 在 user_info.json 目录下控制台执行：mongoimport -d zhihu -c user_info --file user_info.json
 * **zhihu_plot.ipynb pyecharts** 图表绘制代码，可视化库使用 pyecharts。
 ### zhihu_html 
 * 里面包含可视化操作后的大部分文件；
