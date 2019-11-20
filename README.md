@@ -42,6 +42,10 @@
 * **zhihu_p.html** **1w 粉丝用户**关注收藏夹、专栏前50排行及**10w 粉丝用户**用户回答、文章月变化图，及年发布问答文章柱状图；
 * **zhihu.jpg** 粉丝数 1w 以上用户信息词云。
 ### node
+* **get_follow** 以下为文件夹 get_follow 中文件
+   1. **get_zhihu_follow.py** 获取粉丝数前50用户两两之间关注信息的代码, 生成下一步所需的 node50.xlsx。
+   2. **node50.csv** 粉丝数前50用户
+   3. edge50 运行 get_zhihu_follow.py 后获取的文件。
 * 粉丝数前50的高关注用户关系图；
 * **node50.xlsx** gephi 所需的节点文件，文件中 id 列为粉丝数前50用户名, weight 列为粉丝数；
 * **edge50.xlsx** gephi 所需的边文件，文件中 target 列为关注用户，source 列为被关注用户；
