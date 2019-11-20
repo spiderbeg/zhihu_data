@@ -9,6 +9,9 @@
    3. **1w 关注用户** 粉丝数前 50 用户关系图；
    4. **10w 关注用户** 回答、文章月变化图，及年发布问答文章柱状图；
    5. **1w 关注用户** 用户信息词云。
+* 效果图链接如下，图片解释见**文件说明**。注意请耐心等待10秒左右，会有些慢：
+   * https://htmlpreview.github.io/?https://raw.githubusercontent.com/spiderbeg/zhihu_data/master/zhihu_html/zhihu_user.html
+   * https://htmlpreview.github.io/?https://raw.githubusercontent.com/spiderbeg/zhihu_data/master/zhihu_html/zhihu_p.html
 * 更多实用而有趣的分析案例请关注：<strong>Crossin的编程教室</strong>
 ## 项目思路
 1. 知乎是以回答为主的知识社区，为分析知乎高关注用户的基本情况，从高关注用户**张佳玮**关注用户开始抓取粉丝数 1w 以上用户，并以此类推，直至抓取完毕；为获得回答数、粉丝数、点赞数等相关排名。依据**获取的用户数据**抓取知乎粉丝数 1w 以上用户主页文章、回答、获得赞同数等数据及详细的回答、文章数据；
